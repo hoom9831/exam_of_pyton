@@ -1,11 +1,12 @@
 from tkinter import *
 from tkinter import messagebox
-import o
+import pp
 
 win = Tk()
 win.geometry('450x500+550+100')
 win.title('login form')
-x = o.Def_('login.db')
+win.config(bg='indigo')
+x = pp.Def_('login.db')
 
 #####################################
 
@@ -31,10 +32,10 @@ def sing_in():
     lname = ent_lname.get()
     email = ent_email.get()
     password = ent_password.get()
-    if len(email) == 0 یا len(password) == 0:
+    if len(email) == 0 or len(password) == 0:
         messagebox.showerror('error', 'ورودی ایمیل یا کلمه‌ی ورود خالی است')
     elif len(x.serch_(email, password)) == 0:
-        messagebox.showerror('error', 'اول ثبت‌نام کنید')
+        messagebox.showerror('error', 'اول ثبت‌ نام کنید')
     else:
         x.serch_(email, password)
         messagebox.showinfo('خوشامدید', 'hi!!!')
